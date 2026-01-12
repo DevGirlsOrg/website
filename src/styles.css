@@ -1,3 +1,69 @@
 /* You can add global styles to this file, and also import other style files */
 
-@import "tailwindcss";
+@import 'tailwindcss';
+@import 'primeicons/primeicons.css';
+
+* {
+  font-family: 'Noto Sans', sans-serif;
+}
+
+@theme {
+  /* Core Colors - Using oklch for wider color gamut */
+  --color-primary: #1447e6;
+  --color-secondary: #000060;
+  --color-accent: #22d3ee;
+
+  /* Text Colors */
+  --color-light-text: oklch(0.96 0 0);
+  --color-success: oklch(0.55 0.15 145);
+  --color-danger: oklch(0.58 0.2 25);
+  --color-warning: oklch(0.7 0.18 75);
+
+  /* Font Sizes */
+  --font-size-title: 5.4rem;
+  --font-size-title-mobile: 1.4rem;
+  --font-size-subtitle: 1.7rem;
+
+  /* Animations */
+  --ease-fluid: cubic-bezier(0.3, 0, 0, 1);
+  --ease-snappy: cubic-bezier(0.2, 0, 0, 1);
+}
+
+/* Enhanced Buttons */
+.primary-button {
+  border: 1px solid var(--glass-border);
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  color: white;
+  cursor: pointer;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.secondary-button {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-glow));
+  background-size: 200% 100%;
+  animation: gradient-shift 3s ease infinite;
+  color: white;
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  border: none;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
