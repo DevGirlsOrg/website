@@ -1,0 +1,14 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://devgirls.org/sitemap.xml
+
+# Disallow admin and private areas (if any in the future)
+Disallow: /admin/
+Disallow: /private/
+
+# Allow search engines to crawl all public content
+Allow: /home
+Allow: /about
+Allow: /contact

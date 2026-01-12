@@ -1,7 +1,9 @@
-import { Component } from '@angular/core';
-import { Team } from "./components/team/team";
-import { Galery } from "./components/galery/galery";
-import { ContactForm } from "../../components/contact-form/contact-form";
+import { Component, OnInit, inject } from '@angular/core';
+import { Team } from './components/team/team';
+import { Galery } from './components/galery/galery';
+import { ContactForm } from '../../components/contact-form/contact-form';
+import { SeoService } from '../../services/seo.service';
+import { SEO_CONFIG } from '../../config/seo.config';
 
 @Component({
   selector: 'app-about',
@@ -9,6 +11,11 @@ import { ContactForm } from "../../components/contact-form/contact-form";
   templateUrl: './about.html',
   styleUrl: './about.css',
 })
-export class About {
+export class About implements OnInit {
+  private seoService = inject(SeoService);
 
+  ngOnInit(): void {
+    // Appliquer les métadonnées SEO pour la page À propos
+    this.seoService.updateSeo(SEO_CONFIG['about'].metadata);
+  }
 }
