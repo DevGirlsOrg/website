@@ -1,11 +1,11 @@
 import { Component, OnInit, inject } from '@angular/core';
-import { Hero } from './hero/hero';
-import { Mentors } from './mentors/mentors';
-import { Events } from './events/events';
-import { FutureEvents } from './future-events/future-events';
+import { Mentors } from './components/mentors/mentors';
+import { Events } from './components/events/events';
+import { FutureEvents } from './components/future-events/future-events';
 import { ContactForm } from '../../components/contact-form/contact-form';
 import { SeoService } from '../../services/seo.service';
 import { SEO_CONFIG } from '../../config/seo.config';
+import { Hero } from './components/hero/hero';
 
 @Component({
   selector: 'app-home',
