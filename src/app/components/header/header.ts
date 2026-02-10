@@ -1,11 +1,16 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-header',
-  imports: [],
+  imports: [RouterModule],
   templateUrl: './header.html',
   styleUrl: './header.css',
 })
 export class Header {
+  isMenuOpen = signal(false);
 
+  toggleMenu() {
+    this.isMenuOpen.update((val) => !val);
+  }
 }
