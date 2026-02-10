@@ -1,0 +1,94 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import 'tailwindcss';
+@import 'primeicons/primeicons.css';
+
+* {
+  font-family: 'Noto Sans', sans-serif;
+}
+
+@theme {
+  /* Core Colors - Using oklch for wider color gamut */
+  --color-primary: #f00e93;
+  --color-secondary: #1a1a1a;
+
+  /* Font Sizes */
+  --font-size-title: 3.6rem;
+  --font-size-title-mobile: 1.4rem;
+  --font-size-subtitle: 2.4rem;
+  --font-size-subtitle-mobile: 1.2rem;
+
+  /* Animations */
+  --ease-fluid: cubic-bezier(0.3, 0, 0, 1);
+  --ease-snappy: cubic-bezier(0.2, 0, 0, 1);
+}
+
+/* Enhanced Buttons */
+.primary-button {
+  border: none;
+  border-radius: 40px;
+  background-color: var(--color-primary);
+  color: white;
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.secondary-button {
+  border: 1px solid var(--color-primary);
+  border-radius: 40px;
+  background-color: transparent;
+  color: var(--color-primary);
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.primary-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(240, 14, 147, 0.4);
+}
+
+.secondary-button:hover {
+  background-color: var(--color-primary);
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* Responsive Headings */
+h1 {
+  font-size: clamp(2rem, 5vw, var(--font-size-title));
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--color-secondary);
+}
+
+h2 {
+  font-size: clamp(1.5rem, 3vw, var(--font-size-subtitle));
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--color-secondary);
+}
+
+h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--color-secondary);
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: var(--font-size-title-mobile);
+  }
+
+  h2 {
+    font-size: var(--font-size-subtitle-mobile);
+  }
+
+  h3 {
+    font-size: 1rem;
+  }
+}
