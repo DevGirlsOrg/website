@@ -1,86 +1,69 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-interface Event {
-  id: number;
-  title: string;
-  date: string;
-  location: string;
-  imageUrl: string;
-}
-
 @Component({
   selector: 'app-future-events',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: "future-events.html",
-  styleUrls: ["future-events.css"]
+  templateUrl: "./future-events.html",
+  styleUrls: ["./future-events.css"]
 })
 export class FutureEvents {
-  currentSlide = 1; // Start at index 4 to match the active dot in the image
+  currentSlide = 0;
   itemsPerView = 3;
-  
-  events: Event[] = [
-    {
-      id: 1,
-      title: 'DECOUVRONS LE FRAMEWORK REACT',
-      date: '18 Avril 2025',
-      location: 'Canal Olympia - Douala',
-      imageUrl: ''
-    },
-    {
-      id: 2,
-      title: 'DECOUVRONS LE FRAMEWORK REACT',
-      date: '18 Avril 2025',
-      location: 'Canal Olympia - Douala',
-      imageUrl: ''
-    },
-    {
-      id: 3,
-      title: 'DECOUVRONS LE FRAMEWORK REACT',
-      date: '18 Avril 2025',
-      location: 'Canal Olympia - Douala',
-      imageUrl: ''
-    },
-    {
-      id: 4,
-      title: 'DECOUVRONS LE FRAMEWORK REACT',
-      date: '18 Avril 2025',
-      location: 'Canal Olympia - Douala',
-      imageUrl: ''
-    },
-    {
-      id: 5,
-      title: 'DECOUVRONS LE FRAMEWORK REACT',
-      date: '18 Avril 2025',
-      location: 'Canal Olympia - Douala',
-      imageUrl: ''
-    },
-    {
-      id: 6,
-      title: 'DECOUVRONS LE FRAMEWORK REACT',
-      date: '18 Avril 2025',
-      location: 'Canal Olympia - Douala',
-      imageUrl: ''
-    }
+  private touchStartX = 0;
+  private touchEndX = 0;
+
+  events = [
+    { id: 1, title: 'DECOUVRONS LE FRAMEWORK REACT', date: '18 Avril 2025', location: 'Canal Olympia - Douala' },
+    { id: 2, title: 'DECOUVRONS LE FRAMEWORK REACT', date: '18 Avril 2025', location: 'Canal Olympia - Douala' },
+    { id: 3, title: 'DECOUVRONS LE FRAMEWORK REACT', date: '18 Avril 2025', location: 'Canal Olympia - Douala' },
+    { id: 4, title: 'DECOUVRONS LE FRAMEWORK REACT', date: '18 Avril 2025', location: 'Canal Olympia - Douala' },
+    { id: 5, title: 'DECOUVRONS LE FRAMEWORK REACT', date: '18 Avril 2025', location: 'Canal Olympia - Douala' },
+    { id: 6, title: 'DECOUVRONS LE FRAMEWORK REACT', date: '18 Avril 2025', location: 'Canal Olympia - Douala' }
   ];
 
-  dots = new Array(6); // 6 dots for 6 slides
-
-  get visibleEvents(): Event[] {
-    // Return the 3 events currently visible
-    return this.events.slice(0, this.itemsPerView);
+  get dots() {
+    return new Array(this.events.length - (this.itemsPerView - 1));
   }
 
-  nextSlide(): void {
-    this.currentSlide = (this.currentSlide + 1) % this.dots.length;
+  // --- Logique de Navigation ---
+  nextSlide() {
+    if (this.currentSlide < this.events.length - this.itemsPerView) {
+      this.currentSlide++;
+    } else {
+      this.currentSlide = 0;
+    }
   }
 
-  previousSlide(): void {
-    this.currentSlide = (this.currentSlide - 1 + this.dots.length) % this.dots.length;
+  previousSlide() {
+    if (this.currentSlide > 0) {
+      this.currentSlide--;
+    } else {
+      this.currentSlide = this.events.length - this.itemsPerView;
+    }
   }
 
-  goToSlide(index: number): void {
+  goToSlide(index: number) {
     this.currentSlide = index;
+  }
+
+  // --- Logique de Swipe Tactile ---
+  handleTouchStart(event: TouchEvent) {
+    this.touchStartX = event.touches[0].clientX;
+  }
+
+  handleTouchMove(event: TouchEvent) {
+    this.touchEndX = event.touches[0].clientX;
+  }
+
+  handleTouchEnd() {
+    const threshold = 50; // Sensibilité du swipe
+    const distance = this.touchStartX - this.touchEndX;
+
+    if (Math.abs(distance) > threshold) {
+      if (distance > 0) this.nextSlide();
+      else this.previousSlide();
+    }
   }
 }
