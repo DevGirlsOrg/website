@@ -1,0 +1,141 @@
+.future-events {
+  padding: 80px 0;
+  background-color: #fcfcfc;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 10px;
+  color: #1a1a1a;
+}
+
+.section-subtitle {
+  text-align: center;
+  color: #666;
+  margin-bottom: 50px;
+}
+
+/* --- Système de rail --- */
+.events-carousel {
+  position: relative;
+  overflow: hidden;
+  touch-action: pan-y; /* Important pour le swipe mobile */
+  cursor: grab;
+}
+
+.events-carousel:active { cursor: grabbing; }
+
+.events-track {
+  display: flex;
+  gap: 25px;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* --- Cartes --- */
+.event-card {
+  flex: 0 0 calc(33.333% - 17px);
+  background: #fff;
+  border-radius: 15px;
+  border: 1px solid #eee;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+  transition: all 0.3s ease;
+}
+
+.event-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+}
+
+.event-image {
+  height: 280px;
+  background-image: url("/assets/images/events.jpg");
+  background-size: contain; /* On voit toute l'image */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #f8f9fa; /* Fond neutre si l'image ne remplit pas tout */
+  border-radius: 15px 15px 0 0;
+}
+
+.event-content { padding: 25px; }
+
+.event-title {
+  font-size: 1.05rem;
+  font-weight: 800;
+  margin-bottom: 15px;
+  color: #000;
+  text-transform: uppercase;
+}
+
+.event-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.85rem;
+  color: #777;
+}
+
+.meta-item { display: flex; align-items: center; gap: 6px; }
+
+.separator { color: #e91e63; font-weight: bold; }
+
+.icon { color: #888; }
+
+/* --- Contrôles --- */
+.carousel-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 40px;
+}
+
+.carousel-dots { display: flex; gap: 8px; }
+
+.dot {
+  width: 8px;
+  height: 8px;
+  background: #ddd;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.dot.active {
+  background: #e91e63;
+  width: 35px;
+  border-radius: 10px;
+}
+
+.carousel-arrows { display: flex; gap: 15px; }
+
+.arrow-btn {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1.5px solid #e91e63;
+  background: transparent;
+  color: #e91e63;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+}
+
+.arrow-btn:hover { background: #e91e63; color: #fff; }
+
+/* --- Responsive --- */
+@media (max-width: 1024px) {
+  .event-card { flex: 0 0 calc(50% - 13px); }
+}
+@media (max-width: 768px) {
+  .event-card { flex: 0 0 100%; }
+  .carousel-controls { flex-direction: column-reverse; gap: 30px; }
+}
