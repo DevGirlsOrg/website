@@ -1,1 +1,40 @@
-<p>contact-form works!</p>
+<section
+  class="flex justify-center md:justify-between items-center max-md:flex-col p-8 md:p-12 gap-8"
+>
+  <div class="flex flex-col">
+    <h1 class="w-2/3">Restons en contact !</h1>
+    <p class="font-size-subtitle my-6 w-2/3">
+      Une question, une collaboration, ou envie de rejoindre Dev Girls ? Notre équipe est là pour
+      vous ! Que vous soyez développeuse, entreprise, ou curieuse, nous serions ravies d’échanger
+      avec vous.
+    </p>
+    <div class="flex gap-4 items-center">
+      <button class="primary-button w-[150px]">Rejoins-nous</button>
+      <p>social networks</p>
+    </div>
+  </div>
+
+  <form class="bg-white shadow-2xl shadow-gray-500 flex flex-col gap-4 p-6 rounded-xl">
+    <div class="flex gap-4">
+      <input
+        type="text"
+        placeholder="Noms"
+        class="border border-gray-300 p-2 w-[250px] rounded-lg"
+      />
+      <input
+        type="email"
+        placeholder="Email"
+        class="border border-gray-300 p-2 w-[250px] rounded-lg"
+      />
+    </div>
+    <input type="text" placeholder="Email" class="border border-gray-300 p-2 w-full rounded-lg" />
+    <textarea
+      placeholder="Message"
+      rows="10"
+      class="border border-gray-300 p-2 w-full rounded-lg"
+    ></textarea>
+    <div class="flex justify-end">
+      <button class="primary-button" type="submit">Envoyer</button>
+    </div>
+  </form>
+</section>

@@ -1,10 +1,11 @@
 import { Component, OnInit, inject } from '@angular/core';
-import { SeoService } from '../../services/seo.service';
+import { ContactForm } from '../../components/contact-form/contact-form';
 import { SEO_CONFIG } from '../../config/seo.config';
+import { SeoService } from '../../services/seo.service';
 
 @Component({
   selector: 'app-contact',
-  imports: [],
+  imports: [ContactForm],
   templateUrl: './contact.html',
   styleUrl: './contact.css',
 })
