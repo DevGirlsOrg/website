@@ -1,1 +1,55 @@
-<p>contact-form works!</p>
+<section class="contact-section">
+  <div class="contact-copy">
+    <p class="contact-eyebrow">Restons en contact !</p>
+
+    <p class="contact-description">
+      Une question, une collaboration, ou envie de rejoindre Dev Girls ? Notre equipe est la
+      pour vous ! Que vous soyez developpeuse, entreprise, ou curieuse, nous serions ravies
+      d'echanger avec vous.
+    </p>
+
+    <div class="contact-actions">
+      <button type="button" class="primary-button contact-cta">Rejoins-nous</button>
+
+      <div class="social-links" aria-label="Reseaux sociaux Dev Girls">
+        <a href="#" aria-label="GitHub Dev Girls">
+          <i class="pi pi-github"></i>
+        </a>
+        <a href="#" aria-label="LinkedIn Dev Girls">
+          <i class="pi pi-linkedin"></i>
+        </a>
+        <a href="#" aria-label="X Dev Girls">
+          <span class="social-x">X</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <form class="contact-card">
+    <div class="contact-grid">
+      <label class="contact-field">
+        <span class="sr-only">Noms</span>
+        <input type="text" name="name" placeholder="Noms" />
+      </label>
+
+      <label class="contact-field">
+        <span class="sr-only">Prenom</span>
+        <input type="text" name="firstname" placeholder="Prenom" />
+      </label>
+    </div>
+
+    <label class="contact-field contact-field-full">
+      <span class="sr-only">Email</span>
+      <input type="email" name="email" placeholder="Email" />
+    </label>
+
+    <label class="contact-field contact-field-full">
+      <span class="sr-only">Message</span>
+      <textarea name="message" placeholder="Message"></textarea>
+    </label>
+
+    <div class="contact-submit">
+      <button type="submit" class="primary-button submit-button">Envoyer</button>
+    </div>
+  </form>
+</section>
