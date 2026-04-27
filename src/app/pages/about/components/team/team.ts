@@ -12,7 +12,7 @@ export class Team {
     {
       name: 'Arolle Fona',
       role: 'Co-Fondatrice',
-      photo: 'assets/images/members/arolle-fona.png',
+      photo: 'assets/images/members/arolle-fona.webp',
       photoPosition: 'center 10%',
       links: [
         { href: 'https://arollefona.me/', icon: 'pi pi-globe', label: 'Site web' },
@@ -27,7 +27,7 @@ export class Team {
     {
       name: 'Linda Mballa',
       role: 'Co-Fondatrice',
-      photo: 'assets/images/members/linda-mballa.jpg',
+      photo: 'assets/images/members/linda-mballa.webp',
       photoPosition: 'center top',
       links: [
         {
@@ -41,7 +41,7 @@ export class Team {
     {
       name: 'Ivana Carole',
       role: 'Graphiste-Designer',
-      photo: 'assets/images/members/ivana-carole.jpg',
+      photo: 'assets/images/members/ivana-carole.webp',
       photoPosition: 'center 15%',
       links: [
         {
@@ -54,7 +54,7 @@ export class Team {
     {
       name: 'Mengue Tiku Catherine',
       role: 'Responsable Communication',
-      photo: 'assets/images/members/cathy.jpg',
+      photo: 'assets/images/members/cathy.webp',
       photoPosition: 'center top',
       links: [
         {
