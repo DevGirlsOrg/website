@@ -1,6 +1,6 @@
+import { readdirSync, statSync } from 'fs';
+import { basename, dirname, extname, resolve } from 'path';
 import sharp from 'sharp';
-import { readdirSync, statSync, mkdirSync } from 'fs';
-import { resolve, dirname, extname, basename } from 'path';
 import { fileURLToPath } from 'url';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -33,18 +33,20 @@ async function optimizeDir(dir) {
     const sizeBefore = stat.size;
     totalBefore += sizeBefore;
 
-    await sharp(fullPath)
-      .webp({ quality: QUALITY })
-      .toFile(webpPath);
+    await sharp(fullPath).webp({ quality: QUALITY }).toFile(webpPath);
 
     const sizeAfter = statSync(webpPath).size;
     totalAfter += sizeAfter;
 
     const saving = Math.round((1 - sizeAfter / sizeBefore) * 100);
-    console.log(`✅ ${entry} → ${webpName} (${(sizeBefore/1024).toFixed(0)}KB → ${(sizeAfter/1024).toFixed(0)}KB, -${saving}%)`);
+    console.log(
+      `${entry} → ${webpName} (${(sizeBefore / 1024).toFixed(0)}KB → ${(sizeAfter / 1024).toFixed(0)}KB, -${saving}%)`,
+    );
   }
 }
 
 await optimizeDir(assetsDir);
 
-console.log(`\n🎉 Total: ${(totalBefore/1024/1024).toFixed(1)}MB → ${(totalAfter/1024/1024).toFixed(1)}MB (-${Math.round((1 - totalAfter/totalBefore)*100)}%)`);
+console.log(
+  `\n Total: ${(totalBefore / 1024 / 1024).toFixed(1)}MB → ${(totalAfter / 1024 / 1024).toFixed(1)}MB (-${Math.round((1 - totalAfter / totalBefore) * 100)}%)`,
+);
