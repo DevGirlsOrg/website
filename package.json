@@ -3,8 +3,9 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
+    "set-env": "node scripts/set-env.mjs",
+    "start": "npm run set-env && ng serve",
+    "build": "npm run set-env && ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "serve:ssr:devgirlwebsite": "node dist/devgirlwebsite/server/server.mjs"
@@ -32,6 +33,7 @@
     "@angular/platform-server": "^21.0.0",
     "@angular/router": "^21.0.0",
     "@angular/ssr": "^21.0.5",
+    "@emailjs/browser": "^4.4.1",
     "express": "^5.1.0",
     "primeicons": "^7.0.0",
     "rxjs": "~7.8.0",

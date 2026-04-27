@@ -12,39 +12,73 @@
             Tech
             <span class="absolute -top-1 -left-1 w-3 h-3 bg-primary/70" aria-hidden="true"></span>
             <span class="absolute -top-1 -right-1 w-3 h-3 bg-primary/70" aria-hidden="true"></span>
-            <span class="absolute -bottom-1 -left-1 w-3 h-3 bg-primary/70" aria-hidden="true"></span>
-            <span class="absolute -bottom-1 -right-1 w-3 h-3 bg-primary/70" aria-hidden="true"></span>
+            <span
+              class="absolute -bottom-1 -left-1 w-3 h-3 bg-primary/70"
+              aria-hidden="true"
+            ></span>
+            <span
+              class="absolute -bottom-1 -right-1 w-3 h-3 bg-primary/70"
+              aria-hidden="true"
+            ></span>
           </span>
         </h1>
         <p class="font-size-subtitle w-2/3">
           Rejoins-nous pour partager, apprendre et grandir ensemble dans le monde de la technologie.
         </p>
         <div class="max-sm:flex-col flex gap-4">
-          <button class="primary-button">Rejoins-nous</button>
-          <button class="secondary-button">Explorer les ressources</button>
+          <a
+            href="https://forms.gle/wKCFLs53Pe44L41K9"
+            target="_blank"
+            rel="noopener"
+            class="primary-button"
+            >Rejoins-nous</a
+          >
+          <a routerLink="/about" class="secondary-button">Explorer les ressources</a>
         </div>
       </div>
       <div class="flex relative w-full md:w-1/2 justify-center md:justify-end">
-        <img src="assets/images/hero.png" alt="Dev Girls community illustration" class="object-contain" />
+        <img
+          src="assets/images/hero.png"
+          alt="Dev Girls community illustration"
+          class="object-contain"
+        />
         <div class="flex items-center gap-4 absolute -bottom-12 right-0 bg-white rounded-2xl p-4">
-          <img
-            src="assets/images/people.jpg"
-            alt="Hero Card"
-            class="w-16 h-16 object-cover rounded-lg"
-          />
+          <div class="w-16 h-16 rounded-xl bg-primary/10 flex items-center justify-center">
+            <i class="pi pi-users text-primary text-3xl"></i>
+          </div>
           <p class="flex flex-col">
-            Members <span>30 <span class="text-primary">K</span></span>
+            <span class="text-primary"> +1000</span>
+            <span> Members Actifs </span>
           </p>
         </div>
       </div>
     </div>
     <div class="flex flex-col items-center justify-center mt-8">
-      <h2>NOS PARTENAIRES</h2>
-      <ul class="flex items-center gap-6 mt-6">
-        <li>Idem Ai</li>
-        <li>Google</li>
-        <li>Microsoft</li>
-        <li>Amazon</li>
+      <p class="text-sm font-semibold tracking-widest uppercase text-gray-400">Nos partenaires</p>
+      <ul class="flex items-center gap-10 mt-6 flex-wrap justify-center">
+        <li>
+          <a href="https://idem.africa/fr/home" target="_blank" rel="noopener" aria-label="Idem AI">
+            <img
+              src="assets/images/partners/idem-ai.png"
+              alt="Idem AI"
+              class="h-12 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300"
+            />
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://www.linkedin.com/company/ravisafrique/"
+            target="_blank"
+            rel="noopener"
+            aria-label="RAVISA"
+          >
+            <img
+              src="assets/images/partners/ravisa.png"
+              alt="RAVISA"
+              class="h-12 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300"
+            />
+          </a>
+        </li>
       </ul>
     </div>
   </div>

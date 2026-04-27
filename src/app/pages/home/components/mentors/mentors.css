@@ -1,0 +1,53 @@
+.mentors {
+  padding: 80px 20px;
+}
+
+.mentors-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 60px;
+}
+
+.mentors-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.mentors-text p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #555;
+}
+
+.mentors-image {
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+}
+
+.mentors-image img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.mentors-image:hover img {
+  transform: scale(1.03);
+}
+
+@media (max-width: 768px) {
+  .mentors-container {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .mentors-image img {
+    height: 280px;
+  }
+}
