@@ -74,9 +74,9 @@ export const SEO_CONFIG: { [key: string]: PageSeoConfig } = {
 };
 
 export const DEFAULT_SEO_IMAGES = {
-  ogImage: '/assets/images/devgirls-og-image.png',
+  ogImage: '/assets/images/devgirls-og-image.webp',
   twitterImage: '/assets/images/devgirls-twitter-card.jpg',
-  logo: '/assets/images/devgirls-logo.png',
+  logo: '/assets/images/devgirls-logo.webp',
 };
 
 export const SOCIAL_LINKS = {
