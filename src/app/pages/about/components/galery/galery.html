@@ -1,1 +1,13 @@
-<p>galery works!</p>
+<section class="gallery">
+  <div class="gallery-header">
+    <h2>Galerie Photos</h2>
+    <p>Retour en images sur nos événements et moments de partage</p>
+  </div>
+  <div class="gallery-grid">
+    @for (photo of photos; track photo.src) {
+      <div class="gallery-item">
+        <img [src]="photo.src" [alt]="photo.alt" loading="lazy" />
+      </div>
+    }
+  </div>
+</section>

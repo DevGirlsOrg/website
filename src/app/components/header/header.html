@@ -35,7 +35,7 @@
         </a>
       </nav>
 
-      <button class="hidden md:block primary-button">Rejoins-nous</button>
+      <a href="https://forms.gle/wKCFLs53Pe44L41K9" target="_blank" rel="noopener" class="hidden md:block primary-button">Rejoins-nous</a>
 
       <!-- Mobile Toggle -->
       <button class="md:hidden p-2 text-gray-600" (click)="toggleMenu()">
@@ -45,7 +45,7 @@
 
     <!-- Backdrop -->
     <div
-      class="fixed inset-0 z-40 bg-black/50 transition-opacity duration-300"
+      class="md:hidden fixed inset-0 z-40 bg-black/50 transition-opacity duration-300"
       [class.opacity-0]="!isMenuOpen()"
       [class.pointer-events-none]="!isMenuOpen()"
       [class.opacity-100]="isMenuOpen()"
@@ -54,7 +54,7 @@
 
     <!-- Side Drawer -->
     <div
-      class="fixed inset-y-0 right-0 z-50 w-72 bg-white shadow-2xl transform transition-transform duration-300 ease-in-out flex flex-col"
+      class="md:hidden fixed inset-y-0 right-0 z-50 w-72 bg-white shadow-2xl transform transition-transform duration-300 ease-in-out flex flex-col"
       [class.translate-x-full]="!isMenuOpen()"
       [class.translate-x-0]="isMenuOpen()"
     >
@@ -99,9 +99,9 @@
       </nav>
 
       <div class="p-6 border-t border-gray-100">
-        <button class="primary-button w-full justify-center" (click)="toggleMenu()">
+        <a href="https://forms.gle/wKCFLs53Pe44L41K9" target="_blank" rel="noopener" class="primary-button w-full justify-center block text-center" (click)="toggleMenu()">
           Rejoins-nous
-        </button>
+        </a>
       </div>
     </div>
   </div>

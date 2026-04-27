@@ -56,11 +56,10 @@
 
 .event-image {
   height: 280px;
-  background-image: url("/assets/images/events.jpg");
-  background-size: contain; /* On voit toute l'image */
+  background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  background-color: #f8f9fa; /* Fond neutre si l'image ne remplit pas tout */
+  background-color: #f8f9fa;
   border-radius: 15px 15px 0 0;
 }
 

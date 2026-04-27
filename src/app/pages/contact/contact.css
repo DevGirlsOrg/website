@@ -1,0 +1,24 @@
+.contact-page-hero {
+  text-align: center;
+  margin: 1rem;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background: linear-gradient(180deg, #fad9f0 0%, #fdf0fb 50%, #fff8fe 100%);
+}
+
+.contact-page-hero h1,
+.contact-page-hero p {
+  margin-top: 0;
+}
+
+.contact-page-hero h1 {
+  margin-top: 4rem;
+}
+
+.contact-page-hero p {
+  font-size: 1.1rem;
+  color: #555;
+}

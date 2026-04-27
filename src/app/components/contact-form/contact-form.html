@@ -9,47 +9,72 @@
     </p>
 
     <div class="contact-actions">
-      <button type="button" class="primary-button contact-cta">Rejoins-nous</button>
+      <a href="https://forms.gle/wKCFLs53Pe44L41K9" target="_blank" rel="noopener" class="primary-button contact-cta">Rejoins-nous</a>
 
       <div class="social-links" aria-label="Reseaux sociaux Dev Girls">
-        <a href="#" aria-label="GitHub Dev Girls">
+        <a href="https://github.com/DevGirlsOrg" target="_blank" rel="noopener" aria-label="GitHub Dev Girls">
           <i class="pi pi-github"></i>
         </a>
-        <a href="#" aria-label="LinkedIn Dev Girls">
+        <a href="https://www.linkedin.com/company/dev-girls-com/" target="_blank" rel="noopener" aria-label="LinkedIn Dev Girls">
           <i class="pi pi-linkedin"></i>
         </a>
-        <a href="#" aria-label="X Dev Girls">
-          <span class="social-x">X</span>
+        <a href="https://x.com/devgirls_?s=21" target="_blank" rel="noopener" aria-label="X Dev Girls">
+          <span class="social-x">𝕏</span>
+        </a>
+        <a href="https://www.instagram.com/dev__girls?igsh=MWZkaXJveGh0d2t1bA%3D%3D&utm_source=qr" target="_blank" rel="noopener" aria-label="Instagram Dev Girls">
+          <i class="pi pi-instagram"></i>
         </a>
       </div>
     </div>
   </div>
 
-  <form class="contact-card">
+  <form class="contact-card" (ngSubmit)="onSubmit()" #contactForm="ngForm">
     <div class="contact-grid">
       <label class="contact-field">
-        <span class="sr-only">Noms</span>
-        <input type="text" name="name" placeholder="Noms" />
+        <span class="sr-only">Nom</span>
+        <input type="text" name="lastName" placeholder="Nom" [(ngModel)]="lastName" required />
       </label>
 
       <label class="contact-field">
-        <span class="sr-only">Prenom</span>
-        <input type="text" name="firstname" placeholder="Prenom" />
+        <span class="sr-only">Prénom</span>
+        <input type="text" name="firstName" placeholder="Prénom" [(ngModel)]="firstName" required />
       </label>
     </div>
 
     <label class="contact-field contact-field-full">
       <span class="sr-only">Email</span>
-      <input type="email" name="email" placeholder="Email" />
+      <input type="email" name="email" placeholder="Email" [(ngModel)]="email" required />
     </label>
 
     <label class="contact-field contact-field-full">
       <span class="sr-only">Message</span>
-      <textarea name="message" placeholder="Message"></textarea>
+      <textarea name="message" placeholder="Message" [(ngModel)]="message" required></textarea>
     </label>
 
     <div class="contact-submit">
-      <button type="submit" class="primary-button submit-button">Envoyer</button>
+      <button type="submit" class="primary-button submit-button" [disabled]="status() === 'loading'">
+        @if (status() === 'loading') {
+          <span class="spinner"></span>
+          Envoi en cours...
+        } @else {
+          Envoyer
+        }
+      </button>
     </div>
   </form>
 </section>
+
+@if (status() === 'success' || status() === 'error') {
+  <div class="toast" [class.toast-success]="status() === 'success'" [class.toast-error]="status() === 'error'">
+    @if (status() === 'success') {
+      <i class="pi pi-check-circle toast-icon"></i>
+      <span>Message envoyé ! Nous vous répondrons très bientôt.</span>
+    } @else {
+      <i class="pi pi-times-circle toast-icon"></i>
+      <span>Une erreur est survenue. Veuillez réessayer.</span>
+    }
+    <button class="toast-close" (click)="dismissToast()">
+      <i class="pi pi-times"></i>
+    </button>
+  </div>
+}

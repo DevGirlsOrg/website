@@ -1,1 +1,37 @@
-<p>team works!</p>
+<section class="team-hero">
+  <app-header />
+
+  <div class="team-hero-content">
+    <h1>Rencontrez celles qui façonnent <span class="text-primary">Dev Girls</span></h1>
+    <p>Dev Girls est une communauté dynamique dédiée à encourager et soutenir les femmes passionnées de programmation informatique.</p>
+    <div class="team-hero-actions">
+      <a href="https://forms.gle/wKCFLs53Pe44L41K9" target="_blank" rel="noopener" class="primary-button">Rejoins-nous</a>
+      <a href="https://github.com/DevGirlsOrg" target="_blank" rel="noopener" class="secondary-button">Explorez les ressources</a>
+    </div>
+  </div>
+
+  <div class="team-members">
+    @for (member of members; track member.name) {
+      <div class="member-card">
+        <div class="member-photo">
+          <img [src]="member.photo" [alt]="member.name" [style.object-position]="member.photoPosition" />
+        </div>
+        <div class="member-info">
+          <p class="member-name">{{ member.name }}</p>
+          <p class="member-role">{{ member.role }}</p>
+          <div class="member-links">
+            @for (link of member.links; track link.href) {
+              <a [href]="link.href" target="_blank" rel="noopener" class="member-link" [attr.aria-label]="link.label">
+                @if (link.icon === 'x-icon') {
+                  <span class="x-icon">𝕏</span>
+                } @else {
+                  <i [class]="link.icon"></i>
+                }
+              </a>
+            }
+          </div>
+        </div>
+      </div>
+    }
+  </div>
+</section>
